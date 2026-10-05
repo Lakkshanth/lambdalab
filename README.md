@@ -141,6 +141,17 @@ npm run deploy:check
 
 LambdaLab is a static React/Vite application. Netlify is the recommended deployment target because it can build the project directly from its GitHub repository and serve the generated static assets over HTTPS.
 
+### Current production deployment
+
+The public production site is available at [https://lambdalab-bcse355l.netlify.app](https://lambdalab-bcse355l.netlify.app).
+
+To publish a new build from a machine with the Netlify CLI authenticated and this project linked to the site:
+
+```bash
+npm run deploy:check
+npx netlify-cli deploy --prod --dir=dist
+```
+
 ### Deploy manually through Netlify
 
 1. From the project root, run `npm install` and commit the generated `package-lock.json` so the deployment uses reproducible dependency versions. Push it with the source, `package.json`, `.gitignore`, and `netlify.toml` to a GitHub repository. Do not commit `node_modules`, `dist`, local `.env` files, or simulator data exports.
